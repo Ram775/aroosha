@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+/* 🔥 THEME VARIABLES */
+:root {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --green: #6c2972;
+  --green-light: #5c074e;
+}
+
+.dark {
+  --bg: #0f172a;
+  --text: #ffffff;
+}
+
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* TAILWIND CUSTOM VARIANT FOR DARK MODE */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* GLOBAL UTILITY CLASSES */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* GREEN COLOR UTILITY */
+.text-green {
+  color: #9a1d9e;
+}
+
+.bg-green {
+  background: #9e1d1d;
+}
+
+.border-green {
+  border-color: #9e1d82;
+}
+
+/* BUTTONS */
+.btn-primary {
+  background: #683b55;
+  color: white;
+  padding: 12px 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #4e034e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(29, 158, 117, 0.3);
+}
+
+/* CARDS */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.pulse-ring {
+  animation: pulse-ring 2.4s ease-out infinite;
+}
+
+/* SCROLLBAR STYLING */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #891d9e;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #801542;
+}
+
+/* RESPONSIVE FONT SIZES */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
